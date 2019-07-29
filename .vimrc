@@ -1,0 +1,12 @@
+set nocompatible
+syntax on
+set backspace=indent,eol,start
+set number
+set showcmd
+set title
+set incsearch
+set hlsearch
+set softtabstop=2
+set tabstop=2  
+set shiftwidth=2
+set smarttab  
