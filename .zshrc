@@ -19,7 +19,7 @@ POWERLEVEL9K_MODE='nerdfont-complete'
 DEFAULT_USER="harrison"
 
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
+POWERLEVEL9K_RPROMPT_ON_NEWLINE=false
 
 
 POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR='\UE0C6'
@@ -41,14 +41,14 @@ POWERLEVEL9K_CUSTOM_WEATHER="zsh_weather"
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir_writable dir vcs)
 # POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time root_indicator rvm node_version battery custom_weather time)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time root_indicator node_version battery custom_weather time)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time root_indicator battery custom_weather time)
 
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=1
 
 
 POWERLEVEL9K_TIME_FORMAT="%D{%h %d %H:%M}"
 POWERLEVEL9K_TIME_ICON=""
-POWERLEVEL9K_VCS_GIT_ICON=" "
+POWERLEVEL9K_VCS_GIT_ICON=""
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_ICON=""
 
 POWERLEVEL9K_STATUS_OK_BACKGROUND='004'
