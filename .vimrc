@@ -136,7 +136,7 @@ function! LinterStatus() abort
     let l:all_non_errors = l:counts.total - l:all_errors
 
     return l:counts.total == 0 ? '' : printf(
-    \   'Linter: %dW %dE', 
+    \   'Linter: %dW %dE',
     \   all_non_errors,
     \   all_errors
     \)
@@ -166,7 +166,7 @@ set statusline+=\ 
 set statusline+=%{StatuslineGit()}
 set statusline+=
 set statusline+=\ %{ShortPath()}
-set statusline+=\  
+set statusline+=\
 set statusline+=%#statuslineError#
 set statusline+=%m
 set statusline+=%#statuslineDefault#
@@ -174,7 +174,7 @@ set statusline+=%=
 set statusline+=%#statuslineDefaultToLinter#
 set statusline+=
 set statusline+=%#statuslineLinter#
-set statusline+=\ %{LinterStatus()}\ 
+set statusline+=\ %{LinterStatus()}\
 set statusline+=%#statuslineLinterToDefault#
 set statusline+=
 set statusline+=%#statuslineDefault#
@@ -203,4 +203,3 @@ inoremap <Left>  <Esc>:echoe "Use h"<CR>
 inoremap <Right> <Esc>:echoe "Use l"<CR>
 inoremap <Up>    <Esc>:echoe "Use k"<CR>
 inoremap <Down>  <Esc>:echoe "Use j"<CR>
-
