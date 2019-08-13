@@ -9,6 +9,10 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
 
+alias rc="bundle exec bin/rubocop -a"
+alias changes="git diff @~..@ --stat"
+alias db:m="rake db:migrate"
+alias db:s="rake db:setup"
 
 autoload -Uz promptinit
 promptinit
@@ -41,7 +45,7 @@ POWERLEVEL9K_CUSTOM_WEATHER="zsh_weather"
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir_writable dir vcs)
 # POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time root_indicator rvm node_version battery custom_weather time)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time root_indicator battery custom_weather time)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time root_indicator battery time)
 
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=1
 
@@ -73,3 +77,8 @@ POWERLEVEL9K_BATTERY_STAGES=(
    $'██   ▏' $'██▎  ▏' $'██▍  ▏' $'██▌  ▏' $'██▋  ▏' $'██▊  ▏' $'██▉  ▏' $'███  ▏'
    $'███  ▏' $'███▎ ▏' $'███▍ ▏' $'███▌ ▏' $'███▋ ▏' $'███▊ ▏' $'███▉ ▏' $'████ ▏'
    $'████ ▏' $'████▎▏' $'████▍▏' $'████▌▏' $'████▋▏' $'████▊▏' $'████▉▏' $'█████▏' )
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
