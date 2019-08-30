@@ -5,12 +5,13 @@ Plug 'tpope/vim-abolish'
 Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'slim-template/vim-slim'
 Plug 'dense-analysis/ale'
-Plug 'tpope/vim-rails'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'airblade/vim-gitgutter'
+
+" Plug 'tpope/vim-rails'
+" Plug 'slim-template/vim-slim'
 call plug#end()
 
 set nocompatible
@@ -76,9 +77,9 @@ set wildmode=longest:full,full
 set ruler
 set showcmd
 
-function! GitBranch()
-  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-endfunction
+" function! GitBranch()
+"   return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+" endfunction
 
 function! GitStatus()
   if system("git diff") != ""
@@ -109,10 +110,10 @@ function! StatuslineMode()
   endif
 endfunction
 
-function! StatuslineGit()
-  let l:branchname = GitBranch()
-  return strlen(l:branchname) > 0?'   '.l:branchname.' ':''
-endfunction
+" function! StatuslineGit()
+"   let l:branchname = GitBranch()
+"   return strlen(l:branchname) > 0?'   '.l:branchname.' ':''
+" endfunction
 
 function! LinterStatus() abort
     let l:counts = ale#statusline#Count(bufnr(''))
@@ -148,8 +149,8 @@ set statusline=
 set statusline+=%#statuslineDefault#
 set statusline+=%{StatuslineMode()}
 set statusline+=\ 
-set statusline+=%{StatuslineGit()}
-set statusline+=
+" set statusline+=%{StatuslineGit()}
+" set statusline+=
 set statusline+=\ %{ShortPath()}
 set statusline+=\
 set statusline+=%#statuslineError#
