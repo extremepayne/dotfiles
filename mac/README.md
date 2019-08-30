@@ -22,7 +22,7 @@ Install xcode, I think.
 #### [Prezto](https://github.com/sorin-ionescu/prezto)
 `git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"` 
 #### Patched font
-https://www.nerdfonts.com, Profiles > Text > select your patched font
+Download and install a font from https://www.nerdfonts.com, Profiles > Text > select your patched font
 #### Powerlevel10k
 `prompt help`
 Follow instructions to install and make default powerlevel10k.
@@ -30,3 +30,6 @@ Follow instructions to install and make default powerlevel10k.
 Prefs > Profiles > General
 
 Command heading, select command, enter `/bin/zsh --login`
+
+## Finish
+Put the dotfiles in the `~` directory
