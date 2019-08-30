@@ -26,3 +26,17 @@ Also install whatever language you're working in.
 `scoop bucket add java` `scoop install adopt12-hotspot-jre`
 #### Python
 `scoop install python`
+
+## Install vim-plug
+https://github.com/junegunn/vim-plug/blob/master/plug.vim
+Copy and paste into `plug.vim` in `autoload` directory
+
+## Add the vimrc
+Copy/paste the .vimrc file from this repo into wherever your vimrc is coming from
+`:source %`
+`:PlugInstall`
+
+## Install solarized
+Go to your vim directory.
+`cd plugged/vim-colors-solarized/colors`
+`mv solarized.vim ../../../colors`
