@@ -27,6 +27,12 @@ Also install whatever language you're working in.
 #### Python
 `scoop install python`
 
+## Get a pathced font
+https://www.nerdfonts.com/
+
+## Use the patched font for powershell
+I dont know how to do this yet.
+
 ## Install vim-plug
 https://github.com/junegunn/vim-plug/blob/master/plug.vim
 Copy and paste into `plug.vim` in `autoload` directory
@@ -40,3 +46,6 @@ Copy/paste the .vimrc file from this repo into wherever your vimrc is coming fro
 Go to your vim directory.
 `cd plugged/vim-colors-solarized/colors`
 `mv solarized.vim ../../../colors`
+
+## Add custom colors for statusline to solarized.vim
+
