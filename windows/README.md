@@ -31,7 +31,7 @@ Also install whatever language you're working in.
 https://www.nerdfonts.com/
 
 ## Use the patched font for powershell
-I dont know how to do this yet.
+This involves editing registries and stuff. Look it up.
 
 ## Install vim-plug
 https://github.com/junegunn/vim-plug/blob/master/plug.vim
