@@ -23,11 +23,11 @@
 
 Also install whatever language you're working in.
 #### Java
-`scoop bucket add java` `scoop install adopt12-hotspot-jre`
+`scoop bucket add java` `scoop install openjdk`
 #### Python
 `scoop install python`
 
-## Get a pathced font
+## Get a patched font
 https://www.nerdfonts.com/
 
 ## Use the patched font for powershell
