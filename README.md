@@ -32,3 +32,5 @@ Debian stretch, instead do this:
 Append `deb http://ftp.de.debian.org/debian stretch-backports main` to `etc/apt/sources.list`
 
 `sudo apt-get -t stretch-backports install "neovim"`
+
+Do as instructed by `:help nvim-from-vim`
