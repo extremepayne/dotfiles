@@ -13,7 +13,7 @@ sudo apt-get install zsh
 zsh
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 ```
-This will take a while
+That last command will take a while
 ```sh
 chsh -s /bin/zsh
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -22,3 +22,13 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 Enter vim
 
 `:PlugInstall`
+
+For neovim (optinal):
+
+`sudo apt-get install neovim`
+
+Debian stretch, instead do this:
+
+Append `deb http://ftp.de.debian.org/debian stretch-backports main` to `etc/apt/sources.list`
+
+`sudo apt-get -t stretch-backports install "neovim"`
