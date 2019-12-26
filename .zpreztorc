@@ -1,0 +1,18 @@
+zstyle ':prezto:load' pmodule \
+  'environment' \
+  'terminal' \
+  'editor' \
+  'history' \
+  'directory' \
+  'spectrum' \
+  'utility' \
+  'completion' \
+  'ruby' \
+  'rails' \
+  'git' \
+  'prompt' \
+  'syntax-highlighting' \
+  'history-substring-search'
+
+zstyle ':prezto:*:*' color 'yes'
+zstyle ':prezto:module:prompt' theme 'powerlevel10k'
