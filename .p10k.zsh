@@ -204,7 +204,7 @@
   #################################[ os_icon: os identifier ]##################################
   # OS identifier color.
   typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND='005'
-  typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=7
+  typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=0
   # Make the icon bold.
   # typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION='%B${P9K_CONTENT}'
 
@@ -936,8 +936,8 @@
   ####################################[ time: current time ]####################################
   # Current time color.
   # typeset -g POWERLEVEL9K_TIME_FOREGROUND=0
-  # typeset -g POWERLEVEL9K_TIME_BACKGROUND=3
-  # Format for the current time: 09:51:02. See `man 3 strftime`.
+  typeset -g POWERLEVEL9K_TIME_BACKGROUND=6
+  # Format for the current time: Sep 23 09:51. See `man 3 strftime`.
   typeset -g POWERLEVEL9K_TIME_FORMAT='%D{%h %d %H:%M}'
   # If set to true, time will update when you hit enter. This way prompts for the past
   # commands will contain the start times of their commands as opposed to the default
