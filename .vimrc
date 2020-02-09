@@ -6,12 +6,12 @@ Plug 'tpope/vim-abolish'
 Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'slim-template/vim-slim'
 Plug 'dense-analysis/ale'
-Plug 'tpope/vim-rails'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'airblade/vim-gitgutter'
+" Plug 'tpope/vim-rails'
+" Plug 'slim-template/vim-slim'
 call plug#end()
 
 set nocompatible
@@ -20,6 +20,8 @@ set background=dark
 colorscheme solarized
 
 set encoding=utf-8
+
+set nowrap
 
 set backspace=indent,eol,start
 
@@ -126,26 +128,19 @@ endfunction
 set laststatus=2
 
 set statusline=
-set statusline+=%#statuslineDefault#
 set statusline+=%{StatuslineMode()}
 set statusline+=\ 
 set statusline+=%{StatuslineGit()}
 set statusline+=
 set statusline+=\ %{ShortPath()}
 set statusline+=\ 
-" set statusline+=%#statuslineError#
 set statusline+=%m
-" set statusline+=%#statuslineDefault#
-set statusline+=%=
-" set statusline+=%#statuslineDefaultToLinter#
+" seperator from right to left
+set statusline+=%=
 set statusline+=
-" set statusline+=%#statuslineLinter#
 set statusline+=\ %{LinterStatus()}\ 
-" set statusline+=%#statuslineLinterToDefault#
 set statusline+=
-" set statusline+=%#statuslineDefault#
 set statusline+=\ %y
-set statusline+=\ %l:%c
 
 set incsearch
 set hlsearch
