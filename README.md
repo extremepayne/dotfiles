@@ -3,7 +3,7 @@ My . files
 
 Linux install:
 ```sh
-git clone https://github.com/extrempayne/dotfiles
+git clone https://github.com/extremepayne/dotfiles
 cd dotfiles
 cp .p10k.zsh ~
 cp .vimrc ~
