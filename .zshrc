@@ -15,6 +15,8 @@ SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
 alias vi="nvim"
+alias readme="glow README.md -p"
+alias spotui="python3 /home/harrisonpayne/.local/lib/python3.5/site-packages/spotui"
 # Use modern completion system
 autoload -Uz compinit
 compinit
