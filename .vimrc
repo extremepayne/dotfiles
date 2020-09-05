@@ -1,15 +1,13 @@
-
 "                 |
 " Plug.vim stuffs v
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-abolish'
 Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'dense-analysis/ale'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'airblade/vim-gitgutter'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'tpope/vim-rails'
 " Plug 'slim-template/vim-slim'
 call plug#end()
@@ -32,6 +30,41 @@ augroup numbertoggle
   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
 set numberwidth=5
+
+
+set cmdheight=2
+set updatetime=300
+set signcolumn=yes
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+if exists('*complete_info')
+  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+else
+  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+endif
+
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
 
 " source: https://stackoverflow.com/a/24046914/2571881
 let s:comment_map = {
@@ -109,19 +142,6 @@ function! StatuslineGit()
   return strlen(l:branchname) > 0?'   '.l:branchname.' ':''
 endfunction
 
-function! LinterStatus() abort
-    let l:counts = ale#statusline#Count(bufnr(''))
-
-    let l:all_errors = l:counts.error + l:counts.style_error
-    let l:all_non_errors = l:counts.total - l:all_errors
-
-    return l:counts.total == 0 ? '' : printf(
-    \   'Linter: %dW %dE',
-    \   all_non_errors,
-    \   all_errors
-    \)
-endfunction
-
 function! ShortPath()
   return pathshorten(bufname("%"))
 endfunction
@@ -138,8 +158,6 @@ set statusline+=%m
 " seperator from right to left
 set statusline+=%=
 set statusline+=
-set statusline+=\ %{LinterStatus()}\ 
-set statusline+=
 set statusline+=\ %y
 
 set incsearch
@@ -154,6 +172,8 @@ set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 set expandtab
+
+let g:vue_pre_processors = []
 
 nnoremap <C-p> :Files<Cr>
 noremap <Left>  :echoe "Use h"<CR>
