@@ -8,6 +8,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'airblade/vim-gitgutter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'tpope/vim-fugitive'
 " Plug 'tpope/vim-rails'
 " Plug 'slim-template/vim-slim'
 call plug#end()
@@ -80,6 +81,7 @@ let s:comment_map = {
     \   "zshrc": '#',
     \   "zsh_profile": '#',
     \   "vim": '"',
+    \   "cpp": '\/\/',
     \   "slim": '\/',
     \ }
 function! ToggleComment()
@@ -176,11 +178,3 @@ set expandtab
 let g:vue_pre_processors = []
 
 nnoremap <C-p> :Files<Cr>
-noremap <Left>  :echoe "Use h"<CR>
-noremap <Right> :echoe "Use l"<CR>
-noremap <Up>    :echoe "Use k"<CR>
-noremap <Down>  :echoe "Use j"<CR>
-inoremap <Left>  <Esc>:echoe "Use h"<CR>
-inoremap <Right> <Esc>:echoe "Use l"<CR>
-inoremap <Up>    <Esc>:echoe "Use k"<CR>
-inoremap <Down>  <Esc>:echoe "Use j"<CR>
