@@ -106,9 +106,16 @@ alias tree='tree -a -I .git'
 
 alias vi=nvim
 alias spotifyd=/home/harrison/myprograms/spotifyd-linux-full/spotifyd
+alias copy='xclip -selection clipboard'
+alias holiday=/home/harrison/myprograms/ntl-cal/ntl-cal.zsh
+alias minecraft='java -jar /home/harrison/Downloads/minecraft/TLauncher-2.75.jar'
 
 # Add flags to existing aliases.
 alias ls="${aliases[ls]:-ls} -A"
 
 # Set shell options: http://zsh.sourceforge.net/Doc/Release/Options.html.
 setopt glob_dots  # glob matches files starting with dot; `ls *` becomes equivalent to `ls *(D)`
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
