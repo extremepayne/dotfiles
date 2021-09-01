@@ -108,7 +108,6 @@ alias vi=nvim
 alias spotifyd=/home/harrison/myprograms/spotifyd-linux-full/spotifyd
 alias copy='xclip -selection clipboard'
 alias holiday=/home/harrison/myprograms/ntl-cal/ntl-cal.zsh
-alias minecraft='java -jar /home/harrison/Downloads/minecraft/TLauncher-2.75.jar'
 
 # Add flags to existing aliases.
 alias ls="${aliases[ls]:-ls} -A"
