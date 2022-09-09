@@ -5,7 +5,7 @@ Plug 'tpope/vim-abolish'
 Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'dense-analysis/ale'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'airblade/vim-gitgutter'
@@ -17,6 +17,13 @@ set nocompatible
 syntax on
 set background=dark
 colorscheme solarized
+
+" coc.nvim tab completion
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 set encoding=utf-8
 
@@ -108,19 +115,6 @@ function! StatuslineGit()
   return strlen(l:branchname) > 0?'   '.l:branchname.' ':''
 endfunction
 
-function! LinterStatus() abort
-    let l:counts = ale#statusline#Count(bufnr(''))
-
-    let l:all_errors = l:counts.error + l:counts.style_error
-    let l:all_non_errors = l:counts.total - l:all_errors
-
-    return l:counts.total == 0 ? '' : printf(
-    \   'Linter: %dW %dE',
-    \   all_non_errors,
-    \   all_errors
-    \)
-endfunction
-
 function! ShortPath()
   return pathshorten(bufname("%"))
 endfunction
@@ -137,9 +131,9 @@ set statusline+=%m
 " seperator from right to left
 set statusline+=%=
 set statusline+=
-set statusline+=\ %{LinterStatus()}\ 
-set statusline+=
 set statusline+=\ %y
+
+set updatetime=500
 
 set incsearch
 set hlsearch
@@ -163,3 +157,4 @@ inoremap <Left>  <Esc>:echoe "Use h"<CR>
 inoremap <Right> <Esc>:echoe "Use l"<CR>
 inoremap <Up>    <Esc>:echoe "Use k"<CR>
 inoremap <Down>  <Esc>:echoe "Use j"<CR>
+
