@@ -1,4 +1,3 @@
-
 "                 |
 " Plug.vim stuffs v
 call plug#begin('~/.vim/plugged')
