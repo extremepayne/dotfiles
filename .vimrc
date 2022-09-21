@@ -17,6 +17,7 @@ call plug#end()
 set nocompatible
 syntax on
 set background=dark
+let g:solarized_termtrans=1
 colorscheme solarized
 
 " coc.nvim tab completion
@@ -154,6 +155,8 @@ set statusline+=
 set statusline+=\ %y
 
 set updatetime=500
+
+set title
 
 set incsearch
 set hlsearch
