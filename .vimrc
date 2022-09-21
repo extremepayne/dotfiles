@@ -3,15 +3,13 @@
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-abolish'
 Plug 'altercation/vim-colors-solarized'
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'kyazdani42/nvim-tree.lua'
 Plug 'voldikss/vim-floaterm'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'airblade/vim-gitgutter'
-" Plug 'tpope/vim-rails'
-" Plug 'slim-template/vim-slim'
 call plug#end()
 
 set nocompatible
