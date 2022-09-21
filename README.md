@@ -1,7 +1,7 @@
 # dotfiles
 My . files
 
-Linux install:
+## Linux install:
 ```sh
 git clone git@github.com:extremepayne/dotfiles.git
 cd dotfiles
@@ -9,11 +9,25 @@ cp .p10k.zsh ~
 cp .vimrc ~
 cp .zpreztorc ~
 cp .zshrc ~
-sudo apt-get install zsh
+```
+
+Arch
+```sh
+yay -S zsh
+```
+
+Debian
+```
+sudo apt install zsh
+```
+
+```
 zsh
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 ```
+
 That last command will take a while
+
 ```sh
 chsh -s /bin/zsh
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -25,7 +39,7 @@ Enter vim
 
 For neovim (optinal):
 
-`sudo apt-get install neovim`
+`sudo apt-get install neovim` or `yay -S neovim`
 
 Debian stretch, instead do this:
 
