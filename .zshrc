@@ -17,17 +17,24 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Customize to your needs...
-
 alias vi="nvim"
 alias readme="glow README.md -p"
 
 alias tmux="TERM=xterm-256color tmux"
 
+alias bctl="bluetoothctl"
+alias lctl="brightnessctl"
+
 export PATH=/home/payne/.local/bin:$PATH
 
 export VISUAL=nvim
 export EDITOR="$VISUAL"
+
+# Solarized for ls colors
+source ~/.zsh/zsh-dircolors-solarized/zsh-dircolors-solarized.zsh
+
+# NVM
+source /usr/share/nvm/init-nvm.sh
 
 # zsh-bd
 . $HOME/.zsh/plugins/bd/bd.zsh
