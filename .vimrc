@@ -2,7 +2,7 @@
 " Plug.vim stuffs v
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-abolish'
-Plug 'altercation/vim-colors-solarized'
+Plug 'lifepillar/vim-solarized8'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'voldikss/vim-floaterm'
@@ -10,13 +10,21 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'airblade/vim-gitgutter'
+Plug 'preservim/vim-markdown'
 call plug#end()
 
 set nocompatible
 syntax on
 set background=dark
 let g:solarized_termtrans=1
-colorscheme solarized
+let g:solarized_use16=1
+colorscheme solarized8
+
+set encoding=utf-8
+
+set nowrap
+
+set backspace=indent,eol,start
 
 " coc.nvim tab completion
 inoremap <silent><expr> <TAB>
@@ -44,11 +52,18 @@ endfunction
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
 
-set encoding=utf-8
+lua << EOF
 
-set nowrap
+-- disable netrw at the very start of your init.lua (strongly advised)
+vim.g.loaded = 1
+vim.g.loaded_netrwPlugin = 1
 
-set backspace=indent,eol,start
+-- empty setup using defaults
+require("nvim-tree").setup()
+EOF
+
+let g:vim_markdown_toc_autofit = 1
+let g:vim_markdown_folding_disabled = 1
 
 set number relativenumber
 augroup numbertoggle
@@ -170,12 +185,4 @@ set tabstop=4
 set expandtab
 
 nnoremap <C-p> :Files<Cr>
-noremap <Left>  :echoe "Use h"<CR>
-noremap <Right> :echoe "Use l"<CR>
-noremap <Up>    :echoe "Use k"<CR>
-noremap <Down>  :echoe "Use j"<CR>
-inoremap <Left>  <Esc>:echoe "Use h"<CR>
-inoremap <Right> <Esc>:echoe "Use l"<CR>
-inoremap <Up>    <Esc>:echoe "Use k"<CR>
-inoremap <Down>  <Esc>:echoe "Use j"<CR>
 
