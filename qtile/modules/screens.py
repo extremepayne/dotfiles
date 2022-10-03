@@ -73,7 +73,7 @@ screens = [
                        fontsize = 28,
                        foreground='#002b36'
                        ),    
-                widget.Clock(format='%Y-%m-%d %a %I:%M %p',
+                widget.Clock(format='%a %b %d %H:%M',
                              font='MesloLGS NF Regular',
                              background="#002b36",
                              foreground='#859900'),
