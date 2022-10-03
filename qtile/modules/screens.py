@@ -9,25 +9,31 @@ screens = [
         wallpaper="~/.config/qtile/spacewallpaper.jpg",
         wallpaper_mode="fill",
         top=bar.Bar(
-            [   widget.Sep(padding=3, linewidth=0, background="#2f343f"),
-                widget.Image(filename='~/.config/qtile/eos-c.png', margin=3, background="#2f343f", mouse_callbacks={'Button1': lambda: qtile.cmd_spawn("rofi -show combi")}),
-                widget.Sep(padding=4, linewidth=0, background="#2f343f"), 
+            [   widget.Sep(padding=7, linewidth=0, background="#002b36"),
+                widget.Image(filename='~/.config/qtile/eos-c.png', margin=3, background="#002b36", mouse_callbacks={'Button1': lambda: qtile.cmd_spawn("rofi -show combi")}),
+                widget.Sep(padding=4, linewidth=0, background="#002b36"), 
                 widget.GroupBox(
                                 highlight_method='line',
-                                this_screen_border="#5294e2",
-                                this_current_screen_border="#5294e2",
+                                this_screen_border="#2aa198",
+                                this_current_screen_border="#2aa198",
                                 active="#ffffff",
                                 inactive="#848e96",
-                                background="#2f343f"),
+                                background="#002b36"),
                 widget.TextBox(
                        text = '',
                        padding = 0,
                        fontsize = 28,
-                       foreground='#2f343f'
+                       foreground='#002b36'
                        ),    
-                widget.Prompt(),
+                widget.Prompt(
+                             foreground='#839496',
+                             font='MesloLGS NF Regular',
+                    ),
                 widget.Spacer(length=5),
-                widget.WindowName(foreground='#99c0de',fmt='{}'),
+                widget.WindowName(
+                    foreground='#839496',fmt='{}',
+                    font='MesloLGS NF Bold',
+                    ),
                 widget.Chord(
                     chords_colors={
                         'launch': ("#ff0000", "#ffffff"),
@@ -44,51 +50,51 @@ screens = [
                         'Button1':
                         lambda: qtile.cmd_spawn(terminal + ' -e yay -Syu')
                     },
-                    background="#2f343f"),
+                    background="#002b36"),
                 widget.Systray(icon_size = 20),
                 widget.TextBox(
                        text = '',
                        padding = 0,
                        fontsize = 28,
-                       foreground='#2f343f'
+                       foreground='#002b36'
                        ), 
                 volume,
                 widget.TextBox(                                                                    
                        text = '',
                        padding = 0,
                        fontsize = 28,
-                       background='#2f343f',
-                       foreground='#404552',
+                       background='#002b36',
+                       foreground='#073642',
                        ),   
                 battery,
                 widget.TextBox(
                        text = '',
                        padding = 0,
                        fontsize = 28,
-                       foreground='#2f343f'
+                       foreground='#002b36'
                        ),    
-                widget.Clock(format=' %Y-%m-%d %a %I:%M %p',
+                widget.Clock(format='%Y-%m-%d %a %I:%M %p',
                              font='MesloLGS NF Regular',
-                             background="#2f343f",
-                             foreground='#9bd689'),
+                             background="#002b36",
+                             foreground='#859900'),
                                         widget.TextBox(                                                                    
                                text = ' ',
                                padding = 0,
                                fontsize = 28,
-                               background='#2f343f',
-                               foreground='#404552',
+                               background='#002b36',
+                               foreground='#073642',
                                ),   
                 widget.TextBox(
-                    text='',
+                    text=' ',
                     mouse_callbacks= {
                         'Button1':
                         lambda: qtile.cmd_spawn(os.path.expanduser('~/.config/rofi/powermenu.sh'))
                     },
-                    foreground='#e39378'
+                    foreground='#dc322f'
                 )
                 
             ],
             30,  # height in px
-            background="#404552"  # background color
+            background="#073642"  # background color
         ), ),
 ]

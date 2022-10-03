@@ -116,16 +116,17 @@ class MyBattery(widget.Battery):
 
 
 volume = MyVolume(
-    fontsize=18,
+    fontsize=15,
     font='MesloLGS NF Regular',
-    foreground=colors[4],
-    background='#2f343f',
+    foreground='#6c71c4',
+    background='#002b36',
     mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn("pavucontrol")}
 )
 
 battery = MyBattery(
+      fontsize=15,
       font='MesloLGS NF Regular',
       format="{char} {percent:2.0%} {hour:d}:{min:02d} ",
       notify_below=0.05,
-      foreground="#a0ced9",
+      foreground="#268bd2",
 )

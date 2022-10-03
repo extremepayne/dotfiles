@@ -15,7 +15,7 @@ auto_fullscreen = True
 focus_on_window_activation = "smart"
 wmname = "Qtile"
 widget_defaults = dict(
-        font='Cascadia Code',
+        font='MesloLGS NF Regular',
         fontsize=13,
         padding=3
 )
