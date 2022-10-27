@@ -44,7 +44,7 @@ screens = [
                 widget.CheckUpdates(
                     update_interval=1800,
                     distro="Arch_yay",
-                    display_format="{updates} Updates",
+                    display_format="yay: {updates}",
                     foreground="#ffffff",
                     mouse_callbacks={
                         'Button1':
@@ -77,8 +77,9 @@ screens = [
                              font='MesloLGS NF Regular',
                              background="#002b36",
                              foreground='#859900'),
+                widget.Sep(padding = 3, linewidth=0, background="#002b36"),
                                         widget.TextBox(                                                                    
-                               text = ' ',
+                               text = '',
                                padding = 0,
                                fontsize = 28,
                                background='#002b36',
