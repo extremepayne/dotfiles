@@ -1,0 +1,11 @@
+theme:
+  hovered: LightCyan
+  selected: Magenta
+  playbar_progress: LightMagenta
+  playbar_progress_text: White
+
+behavior:
+  shuffle_icon: 咽
+  repeat_track_icon: 綾
+  repeat_context_icon: 凌
+  set_window_title: true
