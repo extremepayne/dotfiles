@@ -1,5 +1,6 @@
 from libqtile.lazy import lazy
 from libqtile.config import Key
+import os
 
 mod = "mod4"
 terminal = "xfce4-terminal"
@@ -16,7 +17,7 @@ keys = [
         desc="Move window focus to other window"),
 
     Key([mod], "r", lazy.spawn("rofi -show combi -modes combi -combi-modes \"window,run,drun\""), desc="spawn rofi"),
-    # Key([mod], "p", lazy.spawn("rofi -show combi -modes combi -combi-modes \"window,run,drun\""), desc="spawn rofi"),
+    Key([mod], "p", lazy.spawn(os.path.expanduser("~/.config/rofi/powermenu.sh")), desc="powermenu"),
 
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
