@@ -50,3 +50,7 @@ Do as instructed by `:help nvim-from-vim`
 ### Solarized dircolors
 
 Run `setupsolarized`
+
+### Font installation
+
+Make sure to install Meslo LGS NF 13.
