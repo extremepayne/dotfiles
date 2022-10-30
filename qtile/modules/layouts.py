@@ -12,7 +12,7 @@ layouts = [
     # layout.Matrix(),
     # layout.MonadTall(),
     layout.MonadWide(margin=8, single_margin=0, border_focus='#5294e2',
-                     border_normal='#2c5380'),
+                     ratio=0.2, min_ratio=0.2, border_normal='#2c5380'),
     # layout.RatioTile(),
     # layout.Tile(),
     # layout.TreeTab(),
