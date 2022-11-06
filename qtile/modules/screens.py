@@ -4,9 +4,11 @@ from libqtile.config import Screen
 from modules.keys import terminal
 import os
 
+from .groups import groups
+
 screens = [
     Screen(
-        wallpaper="~/.config/qtile/spacewallpaper.jpg",
+        wallpaper="~/.config/qtile/spaceflop.jpg",
         wallpaper_mode="fill",
         top=bar.Bar(
             [   widget.Sep(padding=7, linewidth=0, background="#002b36"),
@@ -34,12 +36,12 @@ screens = [
                     foreground='#839496',fmt='{}',
                     font='MesloLGS NF Bold',
                     ),
-                widget.Chord(
-                    chords_colors={
-                        'launch': ("#ff0000", "#ffffff"),
-                    },
-                    name_transform=lambda name: name.upper(),
-                ),
+                # widget.Chord(
+                    # chords_colors={
+                        # 'launch': ("#ff0000", "#ffffff"),
+                    # },
+                    # name_transform=lambda name: name.upper(),
+                # ),
                 widget.CurrentLayoutIcon(scale=0.75),
                 widget.CheckUpdates(
                     update_interval=1800,
@@ -52,6 +54,7 @@ screens = [
                     },
                     background="#002b36"),
                 widget.Systray(icon_size = 20),
+                widget.Wlan(),
                 widget.TextBox(
                        text = '',
                        padding = 0,
