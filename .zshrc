@@ -25,6 +25,8 @@ alias tmux="TERM=xterm-256color tmux"
 alias bctl="bluetoothctl"
 alias lctl="brightnessctl"
 
+alias restart-spotifyd="systemctl restart --user spotifyd.service"
+
 export PATH=/home/payne/.local/bin:$PATH
 
 export VISUAL=nvim
