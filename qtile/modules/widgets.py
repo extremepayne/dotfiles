@@ -126,7 +126,7 @@ volume = MyVolume(
 battery = MyBattery(
       fontsize=15,
       font='MesloLGS NF Regular',
-      format="{char} {percent:2.0%} {hour:d}:{min:02d} ",
+      format="{char} {percent:2.0%} [{hour:d}:{min:02d}] ",
       notify_below=0.05,
       foreground="#268bd2",
 )
