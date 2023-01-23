@@ -26,6 +26,12 @@ set nowrap
 
 set backspace=indent,eol,start
 
+nnoremap <SPACE> <Nop>
+
+let mapleader=" "
+
+" map <SPACE> <Leader>
+
 let g:loaded_netrw       = 1
 let g:loaded_netrwPlugin = 1
 
