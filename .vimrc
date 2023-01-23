@@ -10,7 +10,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'airblade/vim-gitgutter'
-Plug 'preservim/vim-markdown'
+" Plug 'preservim/vim-markdown'
 call plug#end()
 
 set nocompatible
