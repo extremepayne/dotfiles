@@ -35,6 +35,9 @@ let mapleader=" "
 let g:loaded_netrw       = 1
 let g:loaded_netrwPlugin = 1
 
+let g:floaterm_keymap_new = '<Leader>fn'
+let g:floaterm_keymap_toggle = '<Leader>ft'
+
 " coc.nvim tab completion
 inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#pum#next(1) :
