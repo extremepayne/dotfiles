@@ -26,6 +26,9 @@ set nowrap
 
 set backspace=indent,eol,start
 
+let g:loaded_netrw       = 1
+let g:loaded_netrwPlugin = 1
+
 " coc.nvim tab completion
 inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#pum#next(1) :
@@ -52,15 +55,6 @@ endfunction
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
 
-lua << EOF
-
--- disable netrw at the very start of your init.lua (strongly advised)
-vim.g.loaded = 1
-vim.g.loaded_netrwPlugin = 1
-
--- empty setup using defaults
-require("nvim-tree").setup()
-EOF
 
 let g:vim_markdown_toc_autofit = 1
 let g:vim_markdown_folding_disabled = 1
@@ -185,4 +179,10 @@ set tabstop=4
 set expandtab
 
 nnoremap <C-p> :Files<Cr>
+
+lua << EOF
+
+-- empty setup using defaults
+require("nvim-tree").setup()
+EOF
 
