@@ -12,11 +12,11 @@ colors = [
           ["#4f76c7", "#4f76c7"], # color for the 'even widgets'
           ["#e1acff", "#e1acff"], # window name
           ["#ecbbfb", "#ecbbfb"]  # backbround for inactive screens
-] 
+]
 
 
 widget_defaults = dict(
-    font='Cantarell',
+    font='MesloLGS NF Regular',
     fontsize=12,
     padding=3,
 )
@@ -119,7 +119,6 @@ volume = MyVolume(
     fontsize=15,
     font='MesloLGS NF Regular',
     foreground='#6c71c4',
-    background='#002b36',
     mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn("pavucontrol")}
 )
 
@@ -129,4 +128,5 @@ battery = MyBattery(
       format="{char} {percent:2.0%} [{hour:d}:{min:02d}] ",
       notify_below=0.05,
       foreground="#268bd2",
+      background='#002b36',
 )

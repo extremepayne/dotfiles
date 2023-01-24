@@ -13,7 +13,7 @@ screens = [
         top=bar.Bar(
             [   widget.Sep(padding=7, linewidth=0, background="#002b36"),
                 widget.Image(filename='~/.config/qtile/eos-c.png', margin=3, background="#002b36", mouse_callbacks={'Button1': lambda: qtile.cmd_spawn("rofi -show combi")}),
-                widget.Sep(padding=4, linewidth=0, background="#002b36"), 
+                widget.Sep(padding=4, linewidth=0, background="#002b36"),
                 widget.GroupBox(
                                 highlight_method='line',
                                 this_screen_border="#2aa198",
@@ -26,7 +26,7 @@ screens = [
                        padding = 0,
                        fontsize = 28,
                        foreground='#002b36'
-                       ),    
+                       ),
                 widget.Prompt(
                              foreground='#839496',
                              font='MesloLGS NF Regular',
@@ -54,40 +54,64 @@ screens = [
                     },
                     background="#002b36"),
                 widget.Systray(icon_size = 20),
-                widget.Wlan(),
                 widget.TextBox(
                        text = '',
                        padding = 0,
                        fontsize = 28,
-                       foreground='#002b36'
-                       ), 
-                volume,
-                widget.TextBox(                                                                    
+                       foreground='#002b36',
+                       ),
+                widget.Wlan(
+                    fontsize=15,
+                    background="#002b36",
+                    foreground="#d33682"
+                    ),
+                widget.Sep(padding = 3, linewidth=0, background="#002b36"),
+                widget.TextBox(
                        text = '',
                        padding = 0,
                        fontsize = 28,
                        background='#002b36',
                        foreground='#073642',
-                       ),   
+                       ),
+                volume,
+                widget.TextBox(
+                       text = '',
+                       padding = 0,
+                       fontsize = 28,
+                       foreground='#002b36',
+                       ),
                 battery,
                 widget.TextBox(
                        text = '',
                        padding = 0,
                        fontsize = 28,
-                       foreground='#002b36'
-                       ),    
-                widget.Clock(format='%a %b %d %H:%M',
+                       background='#002b36',
+                       foreground='#073642',
+                       ),
+                widget.Clock(format='%a %b %d',
                              font='MesloLGS NF Regular',
+                             fontsize=15,
+                             foreground='#cb4b16'),
+                widget.Sep(padding = 3, linewidth=0),
+                widget.TextBox(
+                       text = '',
+                       padding = 0,
+                       fontsize = 28,
+                       foreground='#002b36'
+                       ),
+                widget.Clock(format='%H:%M',
+                             font='MesloLGS NF Regular',
+                             fontsize=15,
                              background="#002b36",
-                             foreground='#859900'),
+                             foreground='#2aa198'),
                 widget.Sep(padding = 3, linewidth=0, background="#002b36"),
-                                        widget.TextBox(                                                                    
+                                        widget.TextBox(
                                text = '',
                                padding = 0,
                                fontsize = 28,
                                background='#002b36',
                                foreground='#073642',
-                               ),   
+                               ),
                 widget.TextBox(
                     text=' ',
                     mouse_callbacks= {
@@ -96,7 +120,7 @@ screens = [
                     },
                     foreground='#dc322f'
                 )
-                
+
             ],
             30,  # height in px
             background="#073642"  # background color
