@@ -61,6 +61,7 @@ screens = [
                        foreground='#002b36',
                        ),
                 widget.Wlan(
+                    format='{essid} {percent:2.0%}',
                     fontsize=15,
                     background="#002b36",
                     foreground="#d33682"
