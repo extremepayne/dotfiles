@@ -49,10 +49,12 @@ zstyle ':z4h:ssh:*' send-extra-files '~/.nanorc' '~/.env.zsh'
 z4h init || return
 
 # Extend PATH.
-path=(~/bin $path)
+path=(~/bin /home/payne/.local/bin $path)
 
 # Export environment variables.
-export GPG_TTY=$TTY
+# export GPG_TTY=$TTY
+export EDITOR=nvim
+export VISUAL="$EDITOR"
 
 # Source additional local files if they exist.
 z4h source ~/.env.zsh
@@ -60,8 +62,17 @@ z4h source ~/.env.zsh
 # Use additional Git repositories pulled in with `z4h install`.
 #
 # This is just an example that you should delete. It does nothing useful.
-z4h source ohmyzsh/ohmyzsh/lib/diagnostics.zsh  # source an individual file
-z4h load   ohmyzsh/ohmyzsh/plugins/emoji-clock  # load a plugin
+# z4h source ohmyzsh/ohmyzsh/lib/diagnostics.zsh  # source an individual file
+# z4h load   ohmyzsh/ohmyzsh/plugins/emoji-clock  # load a plugin
+
+# Solarized for ls colors
+source ~/.zsh/zsh-dircolors-solarized/zsh-dircolors-solarized.zsh
+
+# NVM
+source /usr/share/nvm/init-nvm.sh
+
+# zsh-bd
+. $HOME/.zsh/plugins/bd/bd.zsh
 
 # Define key bindings.
 z4h bindkey z4h-backward-kill-word  Ctrl+Backspace     Ctrl+H
@@ -83,10 +94,18 @@ function md() { [[ $# == 1 ]] && mkdir -p -- "$1" && cd -- "$1" }
 compdef _directories md
 
 # Define named directories: ~w <=> Windows home directory on WSL.
-[[ -z $z4h_win_home ]] || hash -d w=$z4h_win_home
+# [[ -z $z4h_win_home ]] || hash -d w=$z4h_win_home
 
 # Define aliases.
-alias tree='tree -a -I .git'
+alias vi="nvim"
+alias readme="glow README.md -p"
+
+alias tmux="TERM=xterm-256color tmux"
+
+alias bctl="bluetoothctl"
+alias lctl="brightnessctl"
+
+alias restart-spotifyd="systemctl restart --user spotifyd.service"
 
 # Add flags to existing aliases.
 alias ls="${aliases[ls]:-ls} -A"
@@ -94,3 +113,5 @@ alias ls="${aliases[ls]:-ls} -A"
 # Set shell options: http://zsh.sourceforge.net/Doc/Release/Options.html.
 setopt glob_dots     # no special treatment for file names with a leading dot
 setopt no_auto_menu  # require an extra TAB press to open the completion menu
+
+[[ -n "$_TUTR" ]] && source $_TUTR || true  # shell tutorial shim DO NOT MODIFY
