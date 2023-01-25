@@ -35,6 +35,7 @@ let g:loaded_netrw       = 1
 let g:loaded_netrwPlugin = 1
 
 nnoremap <silent> <Leader>ft :FloatermToggle<CR>
+nnoremap <silent> <Leader>tt :NvimTreeToggle<CR>
 
 " coc.nvim tab completion
 inoremap <silent><expr> <TAB>
