@@ -24,13 +24,6 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
-#### Install zprezto
-
-```
-zsh
-git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-```
-
 ### Install Neovim
 
 `sudo apt install neovim` or `yay -S neovim`
