@@ -38,10 +38,6 @@ Enter Neovim
 :CocInstall coc-json
 ```
 
-#### Set Nvim config to copy `.vimrc`
-
-Do as instructed by `:help nvim-from-vim`
-
 ### Solarized dircolors
 
 Run `setupsolarized`
