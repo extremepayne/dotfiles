@@ -10,7 +10,7 @@ git clone git@github.com:extremepayne/dotfiles.git
 cd dotfiles
 ```
 
-`.p10k.zsh`, `.zpreztorc`, `.zshrc`, `.ideavimrc`, and `.vimrc` go in `~`.
+`.p10k.zsh`, `.zpreztorc`, `.zshrc`, and `.ideavimrc` go in `~`.
 Files and folders in `bin/` should go in `~/.local/bin`.
 Everything else goes in `~/.config`.
 
