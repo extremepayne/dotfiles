@@ -45,14 +45,14 @@ screens = [
                 widget.CurrentLayoutIcon(scale=0.75),
                 widget.CheckUpdates(
                     update_interval=1800,
-                    distro="Arch_yay",
-                    display_format="yay: {updates}",
+                    distro="Arch",
+                    display_format="pacman: {updates}",
                     foreground="#ffffff",
                     mouse_callbacks={
                         'Button1':
                         lambda: qtile.cmd_spawn(terminal + ' -e yay -Syu')
                     },
-                    background="#002b36"),
+                    ),
                 widget.Systray(icon_size = 20),
                 widget.TextBox(
                        text = '',
