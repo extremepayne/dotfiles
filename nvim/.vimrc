@@ -18,8 +18,7 @@ call plug#end()
 set nocompatible
 syntax on
 set background=dark
-let g:solarized_termtrans=1
-let g:solarized_use16=1
+set termguicolors
 colorscheme catppuccin_macchiato
 
 set encoding=utf-8
