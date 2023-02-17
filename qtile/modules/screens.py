@@ -8,7 +8,7 @@ from .groups import groups
 
 screens = [
     Screen(
-        wallpaper="~/.config/qtile/spaceflop.jpg",
+        wallpaper="~/.config/qtile/catppuccin-wallpaper.png",
         wallpaper_mode="fill",
         top=bar.Bar(
             [   widget.Sep(padding=7, linewidth=0, background="#002b36"),
