@@ -2,7 +2,8 @@
 " Plug.vim stuffs v
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-abolish'
-Plug 'lifepillar/vim-solarized8'
+" Plug 'lifepillar/vim-solarized8'
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'voldikss/vim-floaterm'
@@ -19,7 +20,7 @@ syntax on
 set background=dark
 let g:solarized_termtrans=1
 let g:solarized_use16=1
-colorscheme solarized8
+colorscheme catppuccin_macchiato
 
 set encoding=utf-8
 
