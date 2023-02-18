@@ -12,7 +12,7 @@ screens = [
         wallpaper_mode="fill",
         top=bar.Bar(
             [   widget.Sep(padding=7, linewidth=0, background="#002b36"),
-                widget.Image(filename='~/.config/qtile/eos-c.png', margin=3, background="#002b36", mouse_callbacks={'Button1': lambda: qtile.cmd_spawn("rofi -show combi")}),
+                widget.Image(filename='~/.config/qtile/amogus.png', margin=3, background="#002b36", mouse_callbacks={'Button1': lambda: qtile.cmd_spawn("rofi -show combi")}),
                 widget.Sep(padding=4, linewidth=0, background="#002b36"),
                 widget.GroupBox(
                                 highlight_method='line',
