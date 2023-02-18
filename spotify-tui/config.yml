@@ -4,7 +4,7 @@ theme:
   hint: "238, 212, 159" # hint text in errors Yellow
   playbar_background: "24, 25, 38" # background of progress bar "Crust"
   playbar_progress: "30, 32, 48" # filled-in part of the progress bar Mantle
-  playbar_progress_text: "165, 173, 203" # song length and time played/left indicator in the progress bar "Subtext 0"
+  playbar_progress_text: "166, 218, 149" # song length and time played/left indicator in the progress bar "Green"
   playbar_text: "165, 173, 203" # artist name in player pane is "Subtext 0"
   inactive: "110, 115, 141" # borders of inactive panes "Overlay 0"
   text: "202, 211, 245" # text in panes is "Text"
