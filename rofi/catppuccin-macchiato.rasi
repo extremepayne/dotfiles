@@ -1,0 +1,37 @@
+/******************************************************************************
+ * ROFI Color theme
+ * User: Rasi
+ * Copyright: Rasmus Steinke
+ * Edited by: extremepayne
+ ******************************************************************************/
+* {
+    selected-normal-foreground:  rgba ( 202, 211, 245, 100 % );
+    foreground:                  rgba ( 165, 173, 203, 100 % );
+    normal-foreground:           @foreground;
+    alternate-normal-background: rgba ( 36, 39, 58, 1 % );
+    red:                         rgba ( 237, 135, 150, 100 % );
+    selected-urgent-foreground:  rgba ( 245, 189, 230, 100 % );
+    blue:                        rgba ( 138, 173, 244, 100 % );
+    urgent-foreground:           rgba ( 238, 153, 160, 100 % );
+    alternate-urgent-background: rgba ( 36, 39, 58, 90 % );
+    active-foreground:           rgba ( 138, 173, 244, 100 % );
+    lightbg:                     rgba ( 239, 241, 245, 100 % );
+    selected-active-foreground:  rgba ( 138, 173, 244, 100 % );
+    alternate-active-background: rgba ( 36, 39, 58, 88 % );
+    background:                  rgba ( 36, 39, 58, 88 % );
+    bordercolor:                 rgba ( 36, 39, 58, 100 % );
+    alternate-normal-foreground: @foreground;
+    normal-background:           rgba ( 36, 39, 58, 1 % );
+    lightfg:                     rgba ( 6, 79, 105, 100 % );
+    selected-normal-background:  rgba ( 73, 77, 100, 100 % );
+    border-color:                @foreground;
+    spacing:                     2;
+    separatorcolor:              rgba ( 30, 32, 48, 1 % );
+    urgent-background:           rgba ( 36, 39, 58, 15 % );
+    selected-urgent-background:  rgba ( 30, 32, 48, 100 % );
+    alternate-urgent-foreground: @urgent-foreground;
+    background-color:            rgba ( 0, 0, 0, 0 % );
+    alternate-active-foreground: @active-foreground;
+    active-background:           rgba ( 24, 25, 38, 17 % );
+    selected-active-background:  rgba ( 3, 77, 100, 100 % );
+}
