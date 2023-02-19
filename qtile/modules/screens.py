@@ -1,39 +1,41 @@
 from libqtile import bar
 from .widgets import *
+from .colors import colors
 from libqtile.config import Screen
 from modules.keys import terminal
 import os
 
 from .groups import groups
 
+
 screens = [
     Screen(
         wallpaper="~/.config/qtile/catppuccin-wallpaper.png",
         wallpaper_mode="fill",
         top=bar.Bar(
-            [   widget.Sep(padding=7, linewidth=0, background="#002b36"),
-                widget.Image(filename='~/.config/qtile/amogus.png', margin=3, background="#002b36", mouse_callbacks={'Button1': lambda: qtile.cmd_spawn("rofi -show combi")}),
-                widget.Sep(padding=4, linewidth=0, background="#002b36"),
+            [   widget.Sep(padding=7, linewidth=0, background=colors["mantle"]),
+                widget.Image(filename='~/.config/qtile/amogus.png', margin=3, background=colors["mantle"], mouse_callbacks={'Button1': lambda: qtile.cmd_spawn("rofi -show combi")}),
+                widget.Sep(padding=4, linewidth=0, background=colors["mantle"]),
                 widget.GroupBox(
                                 highlight_method='line',
-                                this_screen_border="#2aa198",
-                                this_current_screen_border="#2aa198",
-                                active="#ffffff",
-                                inactive="#848e96",
-                                background="#002b36"),
+                                this_screen_border=colors["sapphire"],
+                                this_current_screen_border=colors["sky"],
+                                active=colors["text"],
+                                inactive=colors["overlay0"],
+                                background=colors["mantle"]),
                 widget.TextBox(
                        text = '',
                        padding = 0,
                        fontsize = 28,
-                       foreground='#002b36'
+                       foreground=colors["mantle"]
                        ),
                 widget.Prompt(
-                             foreground='#839496',
+                             foreground=colors["subtext0"],
                              font='MesloLGS NF Regular',
                     ),
                 widget.Spacer(length=5),
                 widget.WindowName(
-                    foreground='#839496',fmt='{}',
+                    foreground=colors["subtext1"],fmt='{}',
                     font='MesloLGS NF Bold',
                     ),
                 # widget.Chord(
@@ -43,75 +45,65 @@ screens = [
                     # name_transform=lambda name: name.upper(),
                 # ),
                 widget.CurrentLayoutIcon(scale=0.75),
-                widget.CheckUpdates(
-                    update_interval=1800,
-                    distro="Arch",
-                    display_format="pacman: {updates}",
-                    foreground="#ffffff",
-                    mouse_callbacks={
-                        'Button1':
-                        lambda: qtile.cmd_spawn(terminal + ' -e yay -Syu')
-                    },
-                    ),
                 widget.Systray(icon_size = 20),
                 widget.TextBox(
                        text = '',
                        padding = 0,
                        fontsize = 28,
-                       foreground='#002b36',
+                       foreground=colors["mantle"],
                        ),
                 widget.Wlan(
                     format='{essid} {percent:2.0%}',
                     fontsize=15,
-                    background="#002b36",
-                    foreground="#d33682"
+                    background=colors["mantle"],
+                    foreground=colors["muave"],
                     ),
-                widget.Sep(padding = 3, linewidth=0, background="#002b36"),
+                widget.Sep(padding = 3, linewidth=0, background=colors["mantle"]),
                 widget.TextBox(
                        text = '',
                        padding = 0,
                        fontsize = 28,
-                       background='#002b36',
-                       foreground='#073642',
+                       background=colors["mantle"],
+                       foreground=colors["base"],
                        ),
                 volume,
                 widget.TextBox(
                        text = '',
                        padding = 0,
                        fontsize = 28,
-                       foreground='#002b36',
+                       foreground=colors["mantle"],
                        ),
                 battery,
                 widget.TextBox(
                        text = '',
                        padding = 0,
                        fontsize = 28,
-                       background='#002b36',
-                       foreground='#073642',
+                       background=colors["mantle"],
+                       foreground=colors["base"],
                        ),
                 widget.Clock(format='%a %b %d',
                              font='MesloLGS NF Regular',
                              fontsize=15,
-                             foreground='#cb4b16'),
+                             foreground=colors["yellow"]),
                 widget.Sep(padding = 3, linewidth=0),
                 widget.TextBox(
                        text = '',
                        padding = 0,
                        fontsize = 28,
-                       foreground='#002b36'
+                       foreground=colors["mantle"]
                        ),
                 widget.Clock(format='%H:%M',
                              font='MesloLGS NF Regular',
                              fontsize=15,
-                             background="#002b36",
-                             foreground='#2aa198'),
-                widget.Sep(padding = 3, linewidth=0, background="#002b36"),
+                             background=colors["mantle"],
+                             foreground=colors["peach"]),
+                widget.Sep(padding = 3, linewidth=0, background=colors["mantle"]),
                                         widget.TextBox(
                                text = '',
                                padding = 0,
                                fontsize = 28,
-                               background='#002b36',
-                               foreground='#073642',
+                               background=colors["mantle"],
+                               foreground=colors["base"],
                                ),
                 widget.TextBox(
                     text=' ',
@@ -119,11 +111,12 @@ screens = [
                         'Button1':
                         lambda: qtile.cmd_spawn(os.path.expanduser('~/.config/rofi/powermenu.sh'))
                     },
-                    foreground='#dc322f'
+                    foreground=colors["red"]
                 )
 
             ],
-            30,  # height in px
-            background="#073642"  # background color
+            36,  # height in px
+            background=colors["base"],  # background color
+            margin=8
         ), ),
 ]
