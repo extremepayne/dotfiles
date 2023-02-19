@@ -2,7 +2,7 @@ from libqtile import layout
 from libqtile.config import Match
 
 layouts = [
-    layout.MonadTall(margin=8, single_margin=0, border_focus='#8AADF4',
+    layout.MonadTall(margin=8, border_focus='#8AADF4',
                      border_normal='#181926'),
     #layout.Columns(border_focus_stack='#d75f5f'),
     layout.Max(),
@@ -11,7 +11,7 @@ layouts = [
     # layout.Bsp(),
     # layout.Matrix(),
     # layout.MonadTall(),
-    layout.MonadWide(margin=8, single_margin=0, border_focus='#8AADF4',
+    layout.MonadWide(margin=8, border_focus='#8AADF4',
                      ratio=0.2, min_ratio=0.2, border_normal='#181926'),
     # layout.RatioTile(),
     # layout.Tile(),
