@@ -38,10 +38,6 @@ Enter Neovim
 :CocInstall coc-json
 ```
 
-### Solarized dircolors
-
-Run `setupsolarized`
-
 ### Font installation
 
 Make sure to install Meslo LGS NF 13.

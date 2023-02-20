@@ -65,9 +65,6 @@ z4h source ~/.env.zsh
 # z4h source ohmyzsh/ohmyzsh/lib/diagnostics.zsh  # source an individual file
 # z4h load   ohmyzsh/ohmyzsh/plugins/emoji-clock  # load a plugin
 
-# Solarized for ls colors
-source ~/.zsh/zsh-dircolors-solarized/zsh-dircolors-solarized.zsh
-
 # NVM
 source /usr/share/nvm/init-nvm.sh
 
