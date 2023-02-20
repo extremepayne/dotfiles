@@ -98,6 +98,7 @@ alias vi="nvim"
 alias readme="glow README.md -p"
 
 alias tmux="TERM=xterm-256color tmux"
+alias feh="feh --scale-down --image-bg black"
 
 alias bctl="bluetoothctl"
 alias lctl="brightnessctl"
@@ -105,7 +106,7 @@ alias lctl="brightnessctl"
 alias restart-spotifyd="systemctl restart --user spotifyd.service"
 
 # Add flags to existing aliases.
-alias ls="${aliases[ls]:-ls} -A"
+alias ls="${aliases[ls]:-ls} --group-directories-first"
 
 # Set shell options: http://zsh.sourceforge.net/Doc/Release/Options.html.
 setopt glob_dots     # no special treatment for file names with a leading dot
