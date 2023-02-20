@@ -2,17 +2,13 @@ from libqtile import bar
 from .widgets import *
 from .colors import colors
 from libqtile.config import Screen
-from modules.keys import terminal
+from libqtile import hook, log_utils
+# from modules.keys import terminal
 import os
 
-from .groups import groups
+# from .groups import groups
 
-
-screens = [
-    Screen(
-        wallpaper="~/.config/qtile/catppuccin-wallpaper.png",
-        wallpaper_mode="fill",
-        top=bar.Bar(
+my_bar = bar.Bar(
             [   widget.Sep(padding=7, linewidth=0, background=colors["mantle"]),
                 widget.Image(filename='~/.config/qtile/amogus.png', margin=3, background=colors["mantle"], mouse_callbacks={'Button1': lambda: qtile.cmd_spawn("rofi -show combi")}),
                 widget.Sep(padding=4, linewidth=0, background=colors["mantle"]),
@@ -117,6 +113,29 @@ screens = [
             ],
             36,  # height in px
             background=colors["base"],  # background color
-            margin=8
-        ), ),
+            margin=[8, 8, 0, 8]
+        )
+
+screens = [
+    Screen(
+        wallpaper="~/.config/qtile/catppuccin-wallpaper.png",
+        wallpaper_mode="fill",
+        top=my_bar, ),
 ]
+
+@hook.subscribe.layout_change
+def max_no_margins(layout, group):
+    if qtile.current_layout.name == "max":
+        my_bar.margin = [0, 0, 0, 0]
+        my_bar._initial_margin = [0, 0, 0, 0]
+        my_bar._configure(qtile, qtile.current_screen, reconfigure=True)
+        my_bar.draw()
+
+    else:
+        my_bar.margin = [8, 8, 0, 8]
+        my_bar._initial_margin = [8, 8, 0, 8]
+        my_bar._configure(qtile, qtile.current_screen, reconfigure=True)
+        my_bar.draw()
+
+
+
