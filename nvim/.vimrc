@@ -12,6 +12,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'airblade/vim-gitgutter'
 Plug 'jremmen/vim-ripgrep'
+Plug 'editorconfig/editorconfig-vim'
 " Plug 'preservim/vim-markdown'
 call plug#end()
 
