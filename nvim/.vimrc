@@ -3,7 +3,7 @@
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-abolish'
 " Plug 'lifepillar/vim-solarized8'
-Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'voldikss/vim-floaterm'
@@ -19,7 +19,7 @@ set nocompatible
 syntax on
 set background=dark
 set termguicolors
-colorscheme catppuccin_macchiato
+colorscheme catppuccin-macchiato
 
 set encoding=utf-8
 
