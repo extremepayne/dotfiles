@@ -63,14 +63,14 @@ export FZF_DEFAULT_OPTS=" \
 # Source additional local files if they exist.
 z4h source ~/.env.zsh
 
+# NVM
+z4h source /usr/share/nvm/init-nvm.sh
+
 # Use additional Git repositories pulled in with `z4h install`.
 #
 # This is just an example that you should delete. It does nothing useful.
 # z4h source ohmyzsh/ohmyzsh/lib/diagnostics.zsh  # source an individual file
 # z4h load   ohmyzsh/ohmyzsh/plugins/emoji-clock  # load a plugin
-
-# NVM
-source /usr/share/nvm/init-nvm.sh
 
 # zsh-bd
 . $HOME/.zsh/plugins/bd/bd.zsh
