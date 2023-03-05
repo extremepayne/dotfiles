@@ -13,7 +13,7 @@ configuration {
 }
 
 @import "~/.config/rofi/arc_dark_transparent_colors.rasi"
-@import "~/.config/rofi/solarized.rasi"
+@import "~/.config/rofi/catppuccin-macchiato.rasi"
 
 window {
     background-color:               @background;
