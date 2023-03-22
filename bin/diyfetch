@@ -51,7 +51,7 @@ art=$(gum style '    [34m___[0m
 [33m_[34m/\ [0m__)[34m/[33m_[34m)[0m
 [33m\/[34m-____[33m\/[0m')
 
-art=$(gum style --foreground="13" --bold "                                         _.oo.
+art=$(gum style --foreground="5" --bold "                                         _.oo.
                  _.u[[/;:,.         .odMMMMMM'
               .o888UU[[[/;:-.  .o@P^    MMM^
              oN88888UU[[[/;::-.        dP^
