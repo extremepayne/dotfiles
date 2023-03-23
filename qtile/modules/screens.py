@@ -130,12 +130,12 @@ def max_no_margins(layout, group):
         my_bar._initial_margin = [0, 0, 0, 0]
         my_bar._configure(qtile, qtile.current_screen, reconfigure=True)
         my_bar.draw()
+        qtile.current_screen.group.layout_all()
 
     else:
         my_bar.margin = [8, 8, 0, 8]
         my_bar._initial_margin = [8, 8, 0, 8]
         my_bar._configure(qtile, qtile.current_screen, reconfigure=True)
         my_bar.draw()
-
-
+        qtile.current_screen.group.layout_all()
 
