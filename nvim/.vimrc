@@ -10,7 +10,8 @@ Plug 'voldikss/vim-floaterm'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
+Plug 'lewis6991/gitsigns.nvim'
 Plug 'jremmen/vim-ripgrep'
 Plug 'editorconfig/editorconfig-vim'
 " Plug 'preservim/vim-markdown'
@@ -64,6 +65,7 @@ endfunction
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
 
+let g:markdown_fenced_languages = ['html', 'python', 'ruby', 'vim']
 
 let g:vim_markdown_toc_autofit = 1
 let g:vim_markdown_folding_disabled = 1
@@ -195,5 +197,6 @@ lua << EOF
 
 -- empty setup using defaults
 require("nvim-tree").setup()
+require('gitsigns').setup()
 EOF
 
