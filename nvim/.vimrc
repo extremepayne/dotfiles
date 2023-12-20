@@ -14,6 +14,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'jremmen/vim-ripgrep'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'zacharied/lc3.vim'
 " Plug 'preservim/vim-markdown'
 call plug#end()
 
