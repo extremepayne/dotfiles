@@ -5,6 +5,7 @@ from libqtile.config import Screen
 from libqtile import hook, log_utils
 # from modules.keys import terminal
 import os
+from random import choice
 
 # from .groups import groups
 
@@ -118,7 +119,7 @@ my_bar = bar.Bar(
 
 screens = [
     Screen(
-        wallpaper="~/.config/qtile/catppuccin-wallpaper.png",
+        wallpaper="~/.config/qtile/wallpapers/" + choice(os.listdir(os.path.expanduser("~/.config/qtile/wallpapers"))),
         wallpaper_mode="fill",
         top=my_bar, ),
 ]
