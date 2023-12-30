@@ -69,4 +69,6 @@ keys = [
     Key([], "XF86AudioRaiseVolume",lazy.spawn("amixer set Master 3%+")),
     Key([], "XF86AudioLowerVolume",lazy.spawn("amixer set Master 3%-")),
     Key([], "XF86AudioMute",lazy.spawn("amixer set Master toggle")),
+    Key([], "XF86MonBrightnessDown",lazy.spawn("brightnessctl s 10-")),
+    Key([], "XF86MonBrightnessUp",lazy.spawn("brightnessctl s 10+")),
 ]
