@@ -17,6 +17,7 @@ keys = [
         desc="Move window focus to other window"),
 
     Key([mod], "b", lazy.hide_show_bar("top")),
+    Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle floating window"),
 
     Key([mod], "r", lazy.spawn("rofi -show combi -modes combi -combi-modes \"window,run,drun\""), desc="spawn rofi"),
     Key([mod], "p", lazy.spawn(os.path.expanduser("~/.config/rofi/powermenu.sh")), desc="powermenu"),
