@@ -117,11 +117,17 @@ my_bar = bar.Bar(
             margin=[8, 8, 0, 8]
         )
 
+rand_wallpaper = choice(os.listdir(os.path.expanduser("~/.config/qtile/wallpapers")))
 screens = [
     Screen(
-        wallpaper="~/.config/qtile/wallpapers/" + choice(os.listdir(os.path.expanduser("~/.config/qtile/wallpapers"))),
+        wallpaper="~/.config/qtile/wallpapers/" + rand_wallpaper,
         wallpaper_mode="fill",
-        top=my_bar, ),
+        top=my_bar,
+    ),
+    Screen(
+        wallpaper="~/.config/qtile/wallpapers/" + rand_wallpaper,
+        wallpaper_mode="fill",
+    ),
 ]
 
 @hook.subscribe.layout_change
