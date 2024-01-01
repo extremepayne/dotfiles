@@ -1,0 +1,2 @@
+unclutter &
+exec qtile start
