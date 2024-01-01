@@ -15,6 +15,7 @@ keys = [
         "space",
         lazy.layout.next(),
         desc="Move window focus to other window"),
+    Key([mod], 'period', lazy.next_screen(), desc='Next monitor'),
 
     Key([mod], "b", lazy.hide_show_bar("top")),
     Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle floating window"),
