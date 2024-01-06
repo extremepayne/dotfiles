@@ -9,8 +9,7 @@ from random import choice
 
 # from .groups import groups
 
-my_bar = bar.Bar(
-            [   widget.Sep(padding=7, linewidth=0, background=colors["mantle"]),
+bar_widgets = [   widget.Sep(padding=7, linewidth=0, background=colors["mantle"]),
                 widget.Image(filename='~/.config/qtile/amogus.png', margin=3, background=colors["mantle"], mouse_callbacks={'Button1': lambda: qtile.cmd_spawn("rofi -show combi")}),
                 widget.Sep(padding=4, linewidth=0, background=colors["mantle"]),
                 widget.GroupBox(
@@ -111,7 +110,10 @@ my_bar = bar.Bar(
                     foreground=colors["red"]
                 )
 
-            ],
+            ]
+
+my_bar = bar.Bar(
+        bar_widgets,
             36,  # height in px
             background=colors["base"],  # background color
             margin=[8, 8, 0, 8]
