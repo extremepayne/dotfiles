@@ -12,12 +12,6 @@ from random import choice
 
 bar_widgets = [
     widget.Sep(padding=7, linewidth=0, background=colors["mantle"]),
-    widget.Image(
-        filename="~/.config/qtile/amogus.png",
-        margin=3,
-        background=colors["mantle"],
-        mouse_callbacks={"Button1": lambda: qtile.cmd_spawn("rofi -show combi")},
-    ),
     widget.Sep(padding=4, linewidth=0, background=colors["mantle"]),
     widget.GroupBox(
         highlight_method="line",
@@ -114,9 +108,35 @@ bar_widgets = [
         foreground=colors["red"],
     ),
 ]
+main_bar_widgets = bar_widgets.copy()
+main_bar_widgets.insert(
+    1,
+    widget.Image(
+        filename="~/.config/qtile/Slugcat.png",
+        margin=3,
+        background=colors["mantle"],
+        mouse_callbacks={"Button1": lambda: qtile.cmd_spawn("rofi -show combi")},
+    ),
+)
+secondary_bar_widgets = bar_widgets.copy()
+secondary_bar_widgets.insert(
+    1,
+    widget.Image(
+        filename="~/.config/qtile/Lizard.png",
+        margin=3,
+        background=colors["mantle"],
+        mouse_callbacks={"Button1": lambda: qtile.cmd_spawn("rofi -show combi")},
+    ),
+)
 
-my_bar = bar.Bar(
-    bar_widgets,
+main_bar = bar.Bar(
+    main_bar_widgets,
+    36,  # height in px
+    background=colors["base"],  # background color
+    margin=[8, 8, 0, 8],
+)
+secondary_bar = bar.Bar(
+    secondary_bar_widgets,
     36,  # height in px
     background=colors["base"],  # background color
     margin=[8, 8, 0, 8],
@@ -127,11 +147,12 @@ screens = [
     Screen(
         wallpaper="~/.config/qtile/wallpapers/" + rand_wallpaper,
         wallpaper_mode="fill",
-        top=my_bar,
+        top=main_bar,
     ),
     Screen(
         wallpaper="~/.config/qtile/wallpapers/" + rand_wallpaper,
         wallpaper_mode="fill",
+        top=secondary_bar,
     ),
 ]
 
