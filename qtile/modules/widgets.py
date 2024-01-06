@@ -6,34 +6,36 @@ from libqtile.widget.battery import BatteryState, BatteryStatus
 
 
 widget_defaults = dict(
-    font='MesloLGS NF Regular',
+    font="MesloLGS NF Regular",
     fontsize=12,
     padding=3,
 )
 extension_defaults = widget_defaults.copy()
+
+
 class MyVolume(widget.Volume):
     def _configure(self, qtile, bar):
         widget.Volume._configure(self, qtile, bar)
         self.volume = self.get_volume()
         if self.volume <= 0:
-            self.text = f'婢 {self.volume}'
+            self.text = f"婢 {self.volume}"
         elif self.volume < 50:
-            self.text = f'奔 {self.volume}'
+            self.text = f"奔 {self.volume}"
         else:
-            self.text = f'墳 {self.volume}'
+            self.text = f"墳 {self.volume}"
         # drawing here crashes Wayland
 
     def _update_drawer(self, wob=False):
         if self.volume <= 0:
-            self.text = f'婢 {self.volume}'
+            self.text = f"婢 {self.volume}"
         elif self.volume < 50:
-            self.text = f'奔 {self.volume}'
+            self.text = f"奔 {self.volume}"
         else:
-            self.text = f'墳 {self.volume}'
+            self.text = f"墳 {self.volume}"
         self.draw()
 
         if wob:
-            with open(self.wob, 'a') as f:
+            with open(self.wob, "a") as f:
                 f.write(str(self.volume) + "\n")
 
 
@@ -52,7 +54,10 @@ class MyBattery(widget.Battery):
             The string to display for the current status.
         """
         if self.layout is not None:
-            if status.state == BatteryState.DISCHARGING and status.percent < self.low_percentage:
+            if (
+                status.state == BatteryState.DISCHARGING
+                and status.percent < self.low_percentage
+            ):
                 self.layout.colour = self.low_foreground
                 self.background = self.low_background
             else:
@@ -107,16 +112,16 @@ class MyBattery(widget.Battery):
 
 volume = MyVolume(
     fontsize=15,
-    font='MesloLGS NF Regular',
+    font="MesloLGS NF Regular",
     foreground=colors["sapphire"],
-    mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn("pavucontrol")}
+    mouse_callbacks={"Button1": lambda: qtile.cmd_spawn("pavucontrol")},
 )
 
 battery = MyBattery(
-      fontsize=15,
-      font='MesloLGS NF Regular',
-      format="{char} {percent:2.0%} [{hour:d}:{min:02d}] ",
-      notify_below=0.05,
-      foreground=colors["green"],
-      background=colors["mantle"],
+    fontsize=15,
+    font="MesloLGS NF Regular",
+    format="{char} {percent:2.0%} [{hour:d}:{min:02d}] ",
+    notify_below=0.05,
+    foreground=colors["green"],
+    background=colors["mantle"],
 )
