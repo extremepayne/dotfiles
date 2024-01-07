@@ -40,7 +40,6 @@ bar_widgets = [
     # name_transform=lambda name: name.upper(),
     # ),
     widget.CurrentLayoutIcon(scale=0.75),
-    widget.Systray(icon_size=20),
     widget.TextBox(
         text="",
         padding=0,
@@ -118,6 +117,10 @@ main_bar_widgets.insert(
         background=colors["mantle"],
         mouse_callbacks={"Button1": lambda: qtile.cmd_spawn("rofi -show combi")},
     ),
+)
+main_bar_widgets.insert(
+    9,
+    widget.Systray(icon_size=20),
 )
 secondary_bar_widgets = bar_widgets.copy()
 secondary_bar_widgets.insert(
