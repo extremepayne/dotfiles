@@ -2,7 +2,7 @@ from libqtile import bar
 from .widgets import *
 from .colors import colors
 from libqtile.config import Screen
-from libqtile import hook, log_utils
+from libqtile import hook
 from libqtile.log_utils import logger
 
 # from modules.keys import terminal
@@ -14,11 +14,12 @@ from random import choice
 main_bar_widgets = [
     widget.Sep(padding=7, linewidth=0, background=colors["mantle"]),
     widget.Image(
-        filename="~/.config/qtile/Slugcat.png",
+        filename="~/.config/qtile/slugcat.png",
         margin=3,
         background=colors["mantle"],
         mouse_callbacks={"Button1": lambda: qtile.cmd_spawn("rofi -show combi")},
     ),
+    # slugcat_icon,
     widget.Sep(padding=4, linewidth=0, background=colors["mantle"]),
     widget.GroupBox(
         highlight_method="line",
@@ -118,11 +119,12 @@ main_bar_widgets = [
 secondary_bar_widgets = [
     widget.Sep(padding=7, linewidth=0, background=colors["mantle"]),
     widget.Image(
-        filename="~/.config/qtile/Lizard.png",
+        filename="~/.config/qtile/lizard.png",
         margin=3,
         background=colors["mantle"],
         mouse_callbacks={"Button1": lambda: qtile.cmd_spawn("rofi -show combi")},
     ),
+    # lizard_icon,
     widget.Sep(padding=4, linewidth=0, background=colors["mantle"]),
     widget.GroupBox(
         highlight_method="line",

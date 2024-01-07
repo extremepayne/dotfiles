@@ -1,5 +1,7 @@
 from libqtile import widget
+from libqtile import hook
 from libqtile import qtile
+from libqtile.log_utils import logger
 from .colors import colors
 
 from libqtile.widget.battery import BatteryState, BatteryStatus
@@ -109,6 +111,42 @@ class MyBattery(widget.Battery):
             char=char, percent=status.percent, watt=status.power, hour=hour, min=minute
         )
 
+safe_to_change_icon = False
+
+@hook.subscribe.startup_complete
+def its_safe_now():
+    global safe_to_change_icon
+    safe_to_change_icon = True
+
+class MyIcon(widget.Image):
+    """Icon that gets colored in when screen is focused"""
+    def _setup_hooks(self):
+        hook.subscribe.current_screen_change(self.change_image)
+
+    def _configure(self, qtile, bar):
+        super()._configure(qtile, bar)
+        logger.warning("configuring")
+        self._setup_hooks()
+
+    def change_image(self):
+        logger.warning("here")
+        if safe_to_change_icon:
+            if qtile.current_screen == self.bar.screen:
+                if "color-" not in self.filename:
+                    logger.warning("swapping to color")
+                    self.filename = "color-" + self.filename
+                else:
+                    logger.warning("colored icon already displayed")
+            else:
+                if self.filename[:6] == "color-":
+                    logger.warning("swapping to b&w")
+                    self.filename = self.filename[6:] # remove color-
+                else:
+                    logger.warning("colored icon not being displayed")
+
+        self._update_image()
+        self.draw()
+
 
 volume = MyVolume(
     fontsize=15,
@@ -125,3 +163,17 @@ battery = MyBattery(
     foreground=colors["green"],
     background=colors["mantle"],
 )
+
+lizard_icon = MyIcon(
+    filename="~/.config/qtile/lizard.png",
+    margin=3,
+    background=colors["mantle"],
+    mouse_callbacks={"Button1": lambda: qtile.cmd_spawn("rofi -show combi")},
+),
+
+slugcat_icon = MyIcon(
+    filename="~/.config/qtile/slugcat.png",
+    margin=3,
+    background=colors["mantle"],
+    mouse_callbacks={"Button1": lambda: qtile.cmd_spawn("rofi -show combi")},
+),
