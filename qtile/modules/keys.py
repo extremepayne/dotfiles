@@ -2,6 +2,17 @@ from libqtile.lazy import lazy
 from libqtile.config import Key
 import os
 
+
+def window_cycle_screens(qtile, switch_group=False, switch_screen=False):
+    i = qtile.screens.index(qtile.current_screen)
+    if i + 1 != len(qtile.screens):
+        group = qtile.screens[i + 1].group.name
+    else:
+        group = qtile.screens[0].group.name
+    qtile.current_window.togroup(group, switch_group=switch_group)
+    if switch_screen == True:
+        qtile.cmd_to_screen(i + 1)
+
 mod = "mod4"
 terminal = "xfce4-terminal"
 
@@ -13,6 +24,7 @@ keys = [
     Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
     Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
     Key([mod], "period", lazy.next_screen(), desc="Next monitor"),
+    Key([mod], "s", lazy.function(window_cycle_screens)),
     Key([mod], "b", lazy.hide_show_bar("top")),
     Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle floating window"),
     Key(
