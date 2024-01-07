@@ -6,12 +6,13 @@ import os
 def window_cycle_screens(qtile, switch_group=False, switch_screen=False):
     i = qtile.screens.index(qtile.current_screen)
     if i + 1 != len(qtile.screens):
-        group = qtile.screens[i + 1].group.name
+        next_screen = i + 1
     else:
-        group = qtile.screens[0].group.name
+        next_screen = 0
+    group = qtile.screens[next_screen].group.name
     qtile.current_window.togroup(group, switch_group=switch_group)
     if switch_screen == True:
-        qtile.cmd_to_screen(i + 1)
+        qtile.cmd_to_screen(next_screen)
 
 mod = "mod4"
 terminal = "xfce4-terminal"
