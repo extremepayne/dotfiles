@@ -127,24 +127,26 @@ class MyIcon(widget.Image):
 
     def _configure(self, qtile, bar):
         super()._configure(qtile, bar)
-        logger.warning("configuring")
         self._setup_hooks()
 
     def change_image(self):
-        logger.warning("here")
         # if self.safe_to_change_icon:
+        split_path = self.filename.split("/")
+        icon_filename = split_path[-1]
         if self.qtile.current_screen is self.bar.screen:
-            if "color-" not in self.filename:
+            if "color-" not in icon_filename:
                 logger.warning("swapping to color")
-                self.filename = "color-" + self.filename
+                icon_filename = "color-" + icon_filename
             else:
                 logger.warning("colored icon already displayed")
         else:
-            if self.filename[:6] == "color-":
+            if icon_filename[:6] == "color-":
                 logger.warning("swapping to b&w")
-                self.filename = self.filename[6:] # remove color-
+                icon_filename = icon_filename[6:] # remove color-
             else:
                 logger.warning("colored icon not being displayed")
+        reconstructed_path = "/".join(split_path[:-1])
+        self.filename = reconstructed_path + "/" + icon_filename
 
         self._update_image()
         self.draw()
@@ -174,7 +176,7 @@ lizard_icon = MyIcon(
 )
 
 slugcat_icon = MyIcon(
-    filename="~/.config/qtile/slugcat.png",
+    filename="~/.config/qtile/color-slugcat.png",
     margin=3,
     background=colors["mantle"],
     mouse_callbacks={"Button1": lambda: qtile.cmd_spawn("rofi -show combi")},

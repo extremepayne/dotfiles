@@ -13,12 +13,6 @@ from random import choice
 
 main_bar_widgets = [
     widget.Sep(padding=7, linewidth=0, background=colors["mantle"]),
-    widget.Image(
-        filename="~/.config/qtile/slugcat.png",
-        margin=3,
-        background=colors["mantle"],
-        mouse_callbacks={"Button1": lambda: qtile.cmd_spawn("rofi -show combi")},
-    ),
     slugcat_icon,
     widget.Sep(padding=4, linewidth=0, background=colors["mantle"]),
     widget.GroupBox(
@@ -118,12 +112,6 @@ main_bar_widgets = [
 ]
 secondary_bar_widgets = [
     widget.Sep(padding=7, linewidth=0, background=colors["mantle"]),
-    widget.Image(
-        filename="~/.config/qtile/lizard.png",
-        margin=3,
-        background=colors["mantle"],
-        mouse_callbacks={"Button1": lambda: qtile.cmd_spawn("rofi -show combi")},
-    ),
     lizard_icon,
     widget.Sep(padding=4, linewidth=0, background=colors["mantle"]),
     widget.GroupBox(
