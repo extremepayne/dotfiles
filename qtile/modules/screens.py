@@ -19,7 +19,7 @@ main_bar_widgets = [
         background=colors["mantle"],
         mouse_callbacks={"Button1": lambda: qtile.cmd_spawn("rofi -show combi")},
     ),
-    # slugcat_icon,
+    slugcat_icon,
     widget.Sep(padding=4, linewidth=0, background=colors["mantle"]),
     widget.GroupBox(
         highlight_method="line",
@@ -124,7 +124,7 @@ secondary_bar_widgets = [
         background=colors["mantle"],
         mouse_callbacks={"Button1": lambda: qtile.cmd_spawn("rofi -show combi")},
     ),
-    # lizard_icon,
+    lizard_icon,
     widget.Sep(padding=4, linewidth=0, background=colors["mantle"]),
     widget.GroupBox(
         highlight_method="line",
