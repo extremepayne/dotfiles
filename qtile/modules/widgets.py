@@ -1,6 +1,7 @@
 from libqtile import widget
 from libqtile import hook
 from libqtile import qtile
+from libqtile import bar
 from libqtile.log_utils import logger
 from .colors import colors
 
@@ -111,17 +112,19 @@ class MyBattery(widget.Battery):
             char=char, percent=status.percent, watt=status.power, hour=hour, min=minute
         )
 
-safe_to_change_icon = False
-
-@hook.subscribe.startup_complete
-def its_safe_now():
-    global safe_to_change_icon
-    safe_to_change_icon = True
 
 class MyIcon(widget.Image):
     """Icon that gets colored in when screen is focused"""
+    def __init__(self, length=bar.CALCULATED, **config):
+        super().__init__(length, **config)
+        self.safe_to_change_icon = False
+
     def _setup_hooks(self):
         hook.subscribe.current_screen_change(self.change_image)
+        hook.subscribe.startup_complete(self._its_safe)
+
+    def _its_safe(self):
+        self.safe_to_change_icon = True
 
     def _configure(self, qtile, bar):
         super()._configure(qtile, bar)
@@ -130,8 +133,8 @@ class MyIcon(widget.Image):
 
     def change_image(self):
         logger.warning("here")
-        if safe_to_change_icon:
-            if qtile.current_screen == self.bar.screen:
+        if self.safe_to_change_icon:
+            if self.qtile.current_screen is self.bar.screen:
                 if "color-" not in self.filename:
                     logger.warning("swapping to color")
                     self.filename = "color-" + self.filename
