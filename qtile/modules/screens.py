@@ -160,14 +160,14 @@ secondary_bar_widgets = [
         background=colors["mantle"],
         foreground=colors["base"],
     ),
-    volume,
+    volume_secondary,
     widget.TextBox(
         text="",
         padding=0,
         fontsize=28,
         foreground=colors["mantle"],
     ),
-    battery,
+    battery_secondary,
     widget.TextBox(
         text="",
         padding=0,

@@ -159,6 +159,22 @@ volume = MyVolume(
     mouse_callbacks={"Button1": lambda: qtile.cmd_spawn("pavucontrol")},
 )
 
+volume_secondary = MyVolume(
+    fontsize=15,
+    font="MesloLGS NF Regular",
+    foreground=colors["sapphire"],
+    mouse_callbacks={"Button1": lambda: qtile.cmd_spawn("pavucontrol")},
+)
+
+battery_secondary = MyBattery(
+    fontsize=15,
+    font="MesloLGS NF Regular",
+    format="{char} {percent:2.0%} [{hour:d}:{min:02d}] ",
+    notify_below=0.05,
+    foreground=colors["green"],
+    background=colors["mantle"],
+)
+
 battery = MyBattery(
     fontsize=15,
     font="MesloLGS NF Regular",
