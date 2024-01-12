@@ -107,6 +107,8 @@ alias feh="feh --scale-down --image-bg black"
 alias bctl="bluetoothctl"
 alias lctl="brightnessctl"
 
+alias monitor="autorandr --change"
+
 alias restart-spotifyd="systemctl restart --user spotifyd.service"
 
 # Add flags to existing aliases.
